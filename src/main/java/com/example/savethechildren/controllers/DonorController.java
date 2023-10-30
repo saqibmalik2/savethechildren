@@ -48,26 +48,10 @@ public class DonorController {
 		return donorsService.retrieveDonors();
 	}
 	
-//	@GetMapping("/donations/{forceName}/{officerForceId}")
-//	public OfficerDTO getOfficerDetailsByPrimaryKey(@PathVariable String forceName, @PathVariable String officerForceId, HttpServletResponse response){
-//		OfficerDTO officer = officerService.getOfficerByIdAndForceName(forceName, officerForceId);
-//		response.setHeader("Cache-Control", "no-cache");
-//		return officer;
-//	}
-//	
-//	@GetMapping("/officers")
-//	public List<OfficerDTO> getAllOfficers() {
-//		return officerService.getAllOfficers();
-//	}
-//	
 //	@DeleteMapping("/officers/{officerForceId}")
 //	public long deleteOfficer(@PathVariable String officerForceId) {
 //		return officerService.deleteOfficerByForceId(officerForceId);
 //	}
-//	
-//	@PutMapping("/officers")
-//	public String modifyOfficer(@RequestBody OfficerDTO officerDTO){
-//		return officerService.updateOfficer(officerDTO);
-//	}
+
 			
 }
