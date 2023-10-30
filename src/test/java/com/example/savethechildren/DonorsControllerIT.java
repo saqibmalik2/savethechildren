@@ -87,6 +87,36 @@ public class DonorsControllerIT {
 	        }
 	}
 	
+	
+	/**
+	 * Attempt to create a Donor resource with invalid data (missing surname). 
+	 * Check the validation works and returns a Bad Request.
+	 * @throws URISyntaxException
+	 */
+	@Test
+	public void testBadRequestValidation() throws URISyntaxException {
+			
+			final String baseUrl = "http://localhost:"+randomServerPort+"/api/v1/donors";
+			
+			//omit the surname which is a required field
+			DonorDTO donarDto = DonorDTO.builder().firstName(FIRST_NAME)
+    			.middleName1(MIDDLE_NAME1).nationality(NATIONALITY).address(ADDRESS)
+    			.dateOfBirth(DATE_OF_BIRTH).build();
+			
+		    RestTemplate restTemplate = new RestTemplate();
+	        
+	        URI uri = new URI(baseUrl);
+	        HttpEntity<DonorDTO> request = new HttpEntity<>(donarDto);
+	        
+	        try {
+	        	ResponseEntity<String> result = restTemplate.exchange(uri, HttpMethod.POST, request, String.class);
+	        	assertThat(result.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
+	        }
+	        catch (HttpClientErrorException ex) {
+	        	 log.info(ex.getMessage());
+	        }
+	}
+	
 	/**
 	 * Create a test donor in the database using the DonorService class. As this is the only row it will have a membership id of 1.
 	 * Then retrieve the row relating to membership id 1 via a REST call to check that it matches the values we inserted.

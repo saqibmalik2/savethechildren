@@ -48,10 +48,10 @@ public class DonorController {
 		return donorsService.retrieveDonors();
 	}
 	
-//	@DeleteMapping("/officers/{officerForceId}")
-//	public long deleteOfficer(@PathVariable String officerForceId) {
-//		return officerService.deleteOfficerByForceId(officerForceId);
-//	}
+	@DeleteMapping("/{membershipId}")
+	public long deleteDonor(@PathVariable Long membershipId) {
+		return donorsService.deleteDonorByMembershipId(membershipId);
+	}
 
 			
 }

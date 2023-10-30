@@ -58,34 +58,10 @@ public class DonorsService {
 		}
 	}
 	
-//	@Transactional
-//	public long deleteOfficerByForceId(String officerForceId) {
-//		return officerRepo.deleteByOfficerForceId(officerForceId);
-//	}
-	
-//	public DonorDTO getOfficerByIdAndForceName(String forceName, String officerForceId) {
-//		Officer officer = officerRepo.findByForceNameAndOfficerForceId(Nationality.valueOf(forceName), officerForceId);
-//		if (officer != null) {
-//			return convertFromEntity(officer);
-//		}
-//		else {
-//			throw new OfficerNotFoundException(forceName+officerForceId);
-//		}
-//	}
-	
-//	public List<DonorDTO> getAllOfficers() {
-//		List<Officer> officers = officerRepo.retrieveOfficers();
-//		return officers.stream().map(officer -> convertFromEntity(officer)).collect(Collectors.toList());
-//	}
-//	
-//	
-//	@Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
-//	public String updateOfficer(DonorDTO officerDTO) {
-//		Officer officer = officerRepo.findByForceNameAndOfficerForceId(Nationality.valueOf(officerDTO.getForceName()), officerDTO.getOfficerForceId());
-//		modelMapper.map(officerDTO, officer);
-//		officerRepo.save(officer);
-//		return officer.getFirstName() + ":" + officer.getOfficerForceId() + " has been updated.";
-//	}
+	@Transactional
+	public long deleteDonorByMembershipId(Long membershipId) {
+		return donorsRepo.deleteByMembershipId(membershipId);
+	}
 	
 	private Donor convertToEntity(DonorDTO donorDto) {
 		Donor donor = modelMapper.map(donorDto, Donor.class);
