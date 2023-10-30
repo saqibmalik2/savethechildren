@@ -8,4 +8,5 @@ Instructions for creating the docker image
 4. Verify the image has been created by running: **docker images**
 5. Run the docker container via: **docker run -p 8080:8080 savethechildren**
 
-You can use Postman or simple curl commands to test the POST and GET endpoints.
+You can use Postman or simple curl commands to test the POST and GET endpoints
+or you can access all the endppoints via the lovely Swagger UI at the following URL: **http://localhost:8080/swagger-ui/index.html**
