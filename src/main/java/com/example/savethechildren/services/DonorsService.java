@@ -48,9 +48,7 @@ public class DonorsService {
 		List<Donor> listOfDonorsEntity = donorsRepo.retrieveDonors();
 		if (listOfDonorsEntity != null) {
 			List<DonorDTO> listOfDonorsDto = new ArrayList<>();
-			for (Donor donor:listOfDonorsEntity) {
-				listOfDonorsDto.add(convertFromEntity(donor));
-			}
+			listOfDonorsEntity.stream().forEach(donor -> listOfDonorsDto.add(convertFromEntity(donor)));
 			return listOfDonorsDto;
 		}
 		else {
