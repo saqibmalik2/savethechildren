@@ -31,7 +31,7 @@ class EncryptionTest {
     private static final String MIDDLE_NAME1 = "Naveed";
     private static final String NATIONALITY = "UnitedKingdom";
     private static final String ADDRESS = "528 Kents Hill Road North, Benfleet, Essex SS7 4AA";
-    private static final LocalDate DATE_OF_BIRTH = LocalDate.of(1977, 8, 15);
+    private static final LocalDate DATE_OF_BIRTH = LocalDate.of(1977, 02, 12);
     
     @Autowired
     private JdbcTemplate jdbcTemplate;
