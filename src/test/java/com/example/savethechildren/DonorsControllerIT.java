@@ -44,7 +44,7 @@ public class DonorsControllerIT {
 
 	private static final String FIRST_NAME = "Saqib";
     private static final String SURNAME = "Malik";
-    private static final String MIDDLE_NAME1 = "Naveed";
+    private static final String MIDDLE_NAME1 = "Azad";
     private static final String NATIONALITY = "UnitedKingdom";
     private static final String ADDRESS = "528 Kents Hill Road North, Benfleet, Essex SS7 4AA";
     private static final LocalDate DATE_OF_BIRTH = LocalDate.of(1977, 8, 15);
